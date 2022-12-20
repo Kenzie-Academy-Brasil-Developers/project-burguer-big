@@ -1,10 +1,13 @@
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { registerSchema } from "./registerSchema";
-import { api } from "../../services/api";
 import { iRegisterFormData } from "../../interfaces";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
+import { StyledSection } from "../../styles/pageForm";
+import { Link } from "react-router-dom";
+
+//import logo from "../../assets/logo.svg";
 
 export const RegisterPage = () => {
   const { userRegister } = useContext(UserContext);
@@ -15,35 +18,59 @@ export const RegisterPage = () => {
   });
 
   return (
-    <section>
+    <StyledSection>
+      <div>
+          {/* <img src={logo} alt="Logo" /> */}
+        </div>
+        <div>
+          <img src="" alt="" />
+          <span>
+            A vida é como um sanduíche, é preciso recheá-la com os melhores
+            ingredientes.
+          </span>
+        </div>
       <form onSubmit={handleSubmit(userRegister)} noValidate>
-        <label>Name</label>
-        <input
-          type="text"
-          placeholder="Digite aqui seu nome"
-          {...register("name")}
-        />
-        <label>Email</label>
-        <input
-          type="email"
-          placeholder="Digite aqui seu email"
-          {...register("email")}
-        />
-        <label>Senha</label>
-        <input
-          type="password"
-          placeholder="Digite aqui sua senha"
-          {...register("password")}
-        />
-        <label>Confirmar senha</label>
-        <input
-          type="password"
-          placeholder="Digite novamente sua senha"
-          {...register("passwordConfirmation")}
-        />
+       <div>
+         <h4>Cadastro</h4>
+         <button>
+         <Link to="/">Retornar para o login</Link>
+         </button>
+       </div>
+        <fieldset>
+          <label>Name</label>
+          <input
+            type="text"
+            placeholder="Digite aqui seu nome"
+            {...register("name")}
+          />
+        </fieldset>
+        <fieldset>
+          <label>Email</label>
+          <input
+            type="email"
+            placeholder="Digite aqui seu email"
+            {...register("email")}
+          />
+        </fieldset>
+        <fieldset>
+          <label>Senha</label>
+          <input
+            type="password"
+            placeholder="Digite aqui sua senha"
+            {...register("password")}
+          />
+        </fieldset>
+        <fieldset>
+          <label>Confirmar senha</label>
+          <input
+            type="password"
+            placeholder="Digite novamente sua senha"
+            {...register("passwordConfirmation")}
+          />
+        </fieldset>
 
         <button type="submit">Cadastrar</button>
       </form>
-    </section>
+    </StyledSection>
   );
 };

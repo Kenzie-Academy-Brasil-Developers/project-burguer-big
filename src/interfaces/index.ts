@@ -18,8 +18,13 @@ export interface iUserContext {
   userLogin(data: iLoginFormData): void;
   setLoading(boolean: boolean): void;
   getProducts(token: string): void;
+  goLogout():void;
+  setInputValue(data: string):void;
+  inputValue: string;
   loading: boolean;
   tokenUser: string;
+  listProduct: iProduct[];
+  setListProduct(data: iProduct[]):void;
 }
 
 export interface iRegisterFormData {
@@ -31,10 +36,13 @@ export interface iRegisterFormData {
 
 export type iUser = Omit<iLoginFormData, "accessToken">;
 
-export interface IProduct {
+export interface iProduct {
   id: number;
   name: string;
   category: string;
   price: number;
   img: string;
 }
+
+
+

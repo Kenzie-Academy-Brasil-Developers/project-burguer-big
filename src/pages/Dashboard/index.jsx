@@ -1,22 +1,65 @@
 import { useContext, useEffect } from "react";
+import { ListCards } from "../../components/ListCards";
 import { UserContext } from "../../providers/UserContext";
 
 export const Dashboard = () => {
-    const {
-        getProducts,
-        tokenUser,
-      } = useContext(UserContext);
+  const {
+    getProducts,
+    tokenUser,
+    listProduct,
+    setListProduct,
+    goLogout,
+    inputValue,
+    setInputValue,
+  } = useContext(UserContext);
 
-      useEffect(() => {
-          getProducts(tokenUser);
-          console.log("oi");
-      }, []);
+  useEffect(() => {
+    getProducts(tokenUser);
+    // eslint-disable-next-line
+  }, []);
 
-    return (
+  const filterCards = (inputValue) => {
+    const includesItem = listProduct.filter(
+      (item) =>
+        item.name.toLowerCase().includes(inputValue) ||
+        item.category.toLowerCase().includes(inputValue)
+    );
+    console.log(includesItem);
+    includesItem.length > 0
+      ? setListProduct(includesItem)
+      : getProducts(tokenUser);
+  };
+
+  const submit = (event) => {
+    event.preventDefault();
+    filterCards(inputValue);
+  };
+
+  return (
+    <div>
+      <header onSubmit={submit}>
         <div>
-            <header>
-                <h1>Hamburgueria</h1>
-            </header>
+          <h1>Logo</h1>
+          <div>
+            <form>
+              <input
+                type="text"
+                placeholder="Digitar Pesquisa"
+                value={inputValue}
+                onChange={(event) =>
+                  setInputValue(event.target.value.toLowerCase())
+                }
+              ></input>
+              <button type="submit">Pesquisar</button>
+            </form>
+            <button>Carrinho</button>
+            <button onClick={() => goLogout()}>Logout</button>
+          </div>
         </div>
-    )
-}
+      </header>
+      <main>
+        <ListCards />
+      </main>
+    </div>
+  );
+};
