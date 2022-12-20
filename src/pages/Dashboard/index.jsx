@@ -2,6 +2,8 @@ import { useContext, useEffect } from "react";
 import { Cart } from "../../components/Cart";
 import { ListCards } from "../../components/ListCards";
 import { UserContext } from "../../providers/UserContext";
+import logo from "../../assets/logo.svg";
+import { CartContext } from "../../providers/CartContext";
 
 export const Dashboard = () => {
   const {
@@ -12,9 +14,9 @@ export const Dashboard = () => {
     goLogout,
     inputValue,
     setInputValue,
-    currentSale, 
-    setCurrentSale,
   } = useContext(UserContext);
+
+  const { setIsModal, isModal } = useContext(CartContext);
 
   useEffect(() => {
     getProducts(tokenUser);
@@ -38,12 +40,12 @@ export const Dashboard = () => {
     filterCards(inputValue);
   };
 
-
   return (
     <div>
+      {isModal && <Cart />}
       <header onSubmit={submit}>
         <div>
-          <h1>Logo</h1>
+          <img src={logo} alt="" />
           <div>
             <form>
               <input
@@ -56,7 +58,9 @@ export const Dashboard = () => {
               ></input>
               <button type="submit">Pesquisar</button>
             </form>
-            <button type="button" onClick={()=> console.log(currentSale)}>Carrinho</button>
+            <button type="button" onClick={() => setIsModal(true)}>
+              Carrinho
+            </button>
             <button onClick={() => goLogout()}>Logout</button>
           </div>
         </div>

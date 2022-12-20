@@ -1,0 +1,13 @@
+Context API:
+Foi criada a organização de pastas do provider
+e estão funcionando corretamente.
+E contém no mínimo os seguintes contextos:
+UserContext
+CartContext
+
+
+React Hook Form:
+Utilizar o yup e os feedbacks dos erros de
+validação em todos formulários estão claros.
+
+Styled

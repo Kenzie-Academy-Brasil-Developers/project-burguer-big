@@ -9,7 +9,8 @@ import { iLoginFormData } from "../../interfaces";
 
 import { StyledSection } from "../../styles/pageForm";
 
-//import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.svg";
+
 import { Link } from "react-router-dom";
 
 export const LoginPage = () => {
@@ -24,7 +25,7 @@ export const LoginPage = () => {
     <StyledSection>
       <div>
         <div>
-          {/* <img src={logo} alt="Logo" /> */}
+          <img src={logo} alt="Logo" />
         </div>
         <div>
           <img src="" alt="" />

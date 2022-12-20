@@ -1,8 +1,10 @@
 import { useContext } from "react";
+import { CartContext } from "../../providers/CartContext";
 import { UserContext } from "../../providers/UserContext";
 
 export const ListCards = () => {
-  const { listProduct, addCart } = useContext(UserContext);
+  const { listProduct } = useContext(UserContext);
+  const { addCart } = useContext(CartContext);
 
   return (
     <ul>

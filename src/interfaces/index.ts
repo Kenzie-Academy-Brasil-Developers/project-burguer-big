@@ -18,16 +18,13 @@ export interface iUserContext {
   userLogin(data: iLoginFormData): void;
   setLoading(boolean: boolean): void;
   getProducts(token: string): void;
-  goLogout():void;
-  setInputValue(data: string):void;
-  setCurrentSale(data:iProduct[]):void;
-  addCart(data: iProduct):void;
-  currentSale:iProduct[];
+  goLogout(): void;
+  setInputValue(data: string): void;
   inputValue: string;
   loading: boolean;
   tokenUser: string;
   listProduct: iProduct[];
-  setListProduct(data: iProduct[]):void;
+  setListProduct(data: iProduct[]): void;
 }
 
 export interface iRegisterFormData {
@@ -47,5 +44,11 @@ export interface iProduct {
   img: string;
 }
 
-
-
+export interface iCartContext {
+  setIsModal(boolean: boolean): void;
+  isModal: boolean;
+  setCurrentSale(data: iProduct[]): void;
+  addCart(data: iProduct): void;
+  deleteCart(data: iProduct): void;
+  currentSale: iProduct[];
+}

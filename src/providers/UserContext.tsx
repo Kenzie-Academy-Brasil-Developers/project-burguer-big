@@ -16,7 +16,7 @@ export const UserProvider = ({ children }: iChildren) => {
   const [loading, setLoading] = useState(false);
   const [listProduct, setListProduct] = useState<iProduct[]>([] as iProduct[]);
   const [inputValue, setInputValue] = useState("");
-  const [currentSale, setCurrentSale] = useState<iProduct[]>([] as iProduct[]);
+
   const [tokenUser, setTokenUser] = useState<string>(
     (localStorage.getItem("@TOKEN") as string) || ""
   );
@@ -63,10 +63,6 @@ export const UserProvider = ({ children }: iChildren) => {
     navigate("/");
   };
 
-  const addCart = (data: iProduct) => {
-    setCurrentSale([...currentSale, data]);
-  }
-
   async function getProducts(token: string = tokenUser) {
     try {
       const response = await api.get<iProduct[]>("/products", {
@@ -95,9 +91,6 @@ export const UserProvider = ({ children }: iChildren) => {
         tokenUser,
         inputValue,
         setInputValue,
-        currentSale,
-        setCurrentSale,
-        addCart,
       }}
     >
       {children}
