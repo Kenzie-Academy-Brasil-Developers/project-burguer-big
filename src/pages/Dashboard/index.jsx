@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+import { Cart } from "../../components/Cart";
 import { ListCards } from "../../components/ListCards";
 import { UserContext } from "../../providers/UserContext";
 
@@ -11,6 +12,8 @@ export const Dashboard = () => {
     goLogout,
     inputValue,
     setInputValue,
+    currentSale, 
+    setCurrentSale,
   } = useContext(UserContext);
 
   useEffect(() => {
@@ -35,6 +38,7 @@ export const Dashboard = () => {
     filterCards(inputValue);
   };
 
+
   return (
     <div>
       <header onSubmit={submit}>
@@ -52,7 +56,7 @@ export const Dashboard = () => {
               ></input>
               <button type="submit">Pesquisar</button>
             </form>
-            <button>Carrinho</button>
+            <button type="button" onClick={()=> console.log(currentSale)}>Carrinho</button>
             <button onClick={() => goLogout()}>Logout</button>
           </div>
         </div>

@@ -20,6 +20,9 @@ export interface iUserContext {
   getProducts(token: string): void;
   goLogout():void;
   setInputValue(data: string):void;
+  setCurrentSale(data:iProduct[]):void;
+  addCart(data: iProduct):void;
+  currentSale:iProduct[];
   inputValue: string;
   loading: boolean;
   tokenUser: string;

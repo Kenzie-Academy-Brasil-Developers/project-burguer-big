@@ -1,8 +1,8 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
 
 export const ListCards = () => {
-  const { listProduct } = useContext(UserContext);
+  const { listProduct, addCart } = useContext(UserContext);
 
   return (
     <ul>
@@ -18,7 +18,7 @@ export const ListCards = () => {
                 <p>{price}</p>
               </div>
             </div>
-            <button type="button" onClick={() => console.log("oi")}>
+            <button type="button" onClick={() => addCart(item)}>
               Adicionar
             </button>
           </li>
