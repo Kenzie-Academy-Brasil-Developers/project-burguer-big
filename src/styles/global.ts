@@ -23,6 +23,10 @@ export const GlobalStyle = createGlobalStyle`
   --color-alert-information:#155BCB;
 }
 
+body{
+  position: relative;
+}
+
 button {
     cursor: pointer;
     border: 0;

@@ -2,8 +2,11 @@ import { useContext, useEffect } from "react";
 import { Cart } from "../../components/Cart";
 import { ListCards } from "../../components/ListCards";
 import { UserContext } from "../../providers/UserContext";
-import logo from "../../assets/logo.svg";
 import { CartContext } from "../../providers/CartContext";
+
+import logo from "../../assets/logo.svg";
+import cart from "../../assets/icon-cart.svg"
+import logout from "../../assets/icon-logout.svg"
 
 export const Dashboard = () => {
   const {
@@ -29,7 +32,7 @@ export const Dashboard = () => {
         item.name.toLowerCase().includes(inputValue) ||
         item.category.toLowerCase().includes(inputValue)
     );
-    console.log(includesItem);
+
     includesItem.length > 0
       ? setListProduct(includesItem)
       : getProducts(tokenUser);
@@ -59,9 +62,11 @@ export const Dashboard = () => {
               <button type="submit">Pesquisar</button>
             </form>
             <button type="button" onClick={() => setIsModal(true)}>
-              Carrinho
+              <img src={cart} alt="Carrinho" />
             </button>
-            <button onClick={() => goLogout()}>Logout</button>
+            <button onClick={() => goLogout()}>
+              <img src={logout} alt="Sair" />
+            </button>
           </div>
         </div>
       </header>

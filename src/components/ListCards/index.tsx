@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import { CartContext } from "../../providers/CartContext";
 import { UserContext } from "../../providers/UserContext";
+import { StyledUl } from "./style";
 
 export const ListCards = () => {
   const { listProduct } = useContext(UserContext);
   const { addCart } = useContext(CartContext);
 
   return (
-    <ul>
+    <StyledUl>
       {listProduct?.map((item) => {
         const { category, id, img, name, price } = item;
         return (
@@ -26,6 +27,6 @@ export const ListCards = () => {
           </li>
         );
       })}
-    </ul>
+    </StyledUl>
   );
 };

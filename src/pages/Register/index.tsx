@@ -1,4 +1,4 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { registerSchema } from "./registerSchema";
 import { iRegisterFormData } from "../../interfaces";
@@ -7,7 +7,7 @@ import { UserContext } from "../../providers/UserContext";
 import { StyledSection } from "../../styles/pageForm";
 import { Link } from "react-router-dom";
 
-//import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.svg";
 
 export const RegisterPage = () => {
   const { userRegister } = useContext(UserContext);
@@ -20,7 +20,7 @@ export const RegisterPage = () => {
   return (
     <StyledSection>
       <div>
-          {/* <img src={logo} alt="Logo" /> */}
+          <img src={logo} alt="Logo" />
         </div>
         <div>
           <img src="" alt="" />

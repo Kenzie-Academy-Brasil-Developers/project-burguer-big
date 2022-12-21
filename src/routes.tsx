@@ -6,6 +6,7 @@ import { LoginPage } from "./pages/LoginPage";
 import { RegisterPage } from "./pages/Register";
 import { ProtectedRoutes } from "./ProtectedRoutes";
 
+
 export const RoutesComponent = () => {
     return (
       <Routes>
