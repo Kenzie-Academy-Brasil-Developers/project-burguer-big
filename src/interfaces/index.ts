@@ -51,4 +51,5 @@ export interface iCartContext {
   addCart(data: iProduct): void;
   deleteCart(data: iProduct): void;
   currentSale: iProduct[];
+  Total: number;
 }

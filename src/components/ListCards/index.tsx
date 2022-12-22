@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "../../providers/CartContext";
 import { UserContext } from "../../providers/UserContext";
-import { StyledUl } from "./style";
+import { GreenButton } from "../../styles/buttons";
+import { StyledDivDescription, StyledDivImg, StyledUl } from "./style";
 
 export const ListCards = () => {
   const { listProduct } = useContext(UserContext);
@@ -14,16 +15,18 @@ export const ListCards = () => {
         return (
           <li key={id}>
             <div>
-              <img src={img} alt="" />
-              <div>
+              <StyledDivImg>
+                <img src={img} alt="Produto" />
+              </StyledDivImg>
+              <StyledDivDescription>
                 <h4>{name}</h4>
                 <p>{category}</p>
                 <p>{price}</p>
-              </div>
+                <GreenButton type="button" onClick={() => addCart(item)}>
+                  Adicionar
+                </GreenButton>
+              </StyledDivDescription>
             </div>
-            <button type="button" onClick={() => addCart(item)}>
-              Adicionar
-            </button>
           </li>
         );
       })}

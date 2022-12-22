@@ -8,11 +8,16 @@ import { StyledSection } from "../../styles/pageForm";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
+import { GreyButton } from "../../styles/buttons";
 
 export const RegisterPage = () => {
   const { userRegister } = useContext(UserContext);
 
-  const { register, handleSubmit } = useForm<iRegisterFormData>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<iRegisterFormData>({
     mode: "onBlur",
     resolver: yupResolver(registerSchema),
   });
@@ -20,22 +25,22 @@ export const RegisterPage = () => {
   return (
     <StyledSection>
       <div>
-          <img src={logo} alt="Logo" />
-        </div>
-        <div>
-          <img src="" alt="" />
-          <span>
-            A vida é como um sanduíche, é preciso recheá-la com os melhores
-            ingredientes.
-          </span>
-        </div>
+        <img src={logo} alt="Logo" />
+      </div>
+      <div>
+        <img src="" alt="" />
+        <span>
+          A vida é como um sanduíche, é preciso recheá-la com os melhores
+          ingredientes.
+        </span>
+      </div>
       <form onSubmit={handleSubmit(userRegister)} noValidate>
-       <div>
-         <h4>Cadastro</h4>
-         <button>
-         <Link to="/">Retornar para o login</Link>
-         </button>
-       </div>
+        <div>
+          <h4>Cadastro</h4>
+          <button>
+            <Link to="/">Retornar para o login</Link>
+          </button>
+        </div>
         <fieldset>
           <label>Name</label>
           <input
@@ -43,6 +48,7 @@ export const RegisterPage = () => {
             placeholder="Digite aqui seu nome"
             {...register("name")}
           />
+          {errors.name?.message && <p>{errors.name.message}</p>}
         </fieldset>
         <fieldset>
           <label>Email</label>
@@ -52,6 +58,7 @@ export const RegisterPage = () => {
             {...register("email")}
           />
         </fieldset>
+        {errors.email?.message && <p>{errors.email.message}</p>}
         <fieldset>
           <label>Senha</label>
           <input
@@ -60,6 +67,7 @@ export const RegisterPage = () => {
             {...register("password")}
           />
         </fieldset>
+        {errors.password?.message && <p>{errors.password.message}</p>}
         <fieldset>
           <label>Confirmar senha</label>
           <input
@@ -68,8 +76,11 @@ export const RegisterPage = () => {
             {...register("passwordConfirmation")}
           />
         </fieldset>
+        {errors.passwordConfirmation?.message && (
+          <p>{errors.passwordConfirmation.message}</p>
+        )}
 
-        <button type="submit">Cadastrar</button>
+        <GreyButton type="submit">Cadastrar</GreyButton>
       </form>
     </StyledSection>
   );

@@ -17,6 +17,11 @@ export const CartProvider = ({ children }: iChildren) => {
     setCurrentSale(newList);
   };
 
+  const Total = currentSale.reduce((acc, currentValue) => {
+    return acc + currentValue.price;
+  }, 0);
+ 
+
   return (
     <CartContext.Provider
       value={{
@@ -26,6 +31,7 @@ export const CartProvider = ({ children }: iChildren) => {
         setIsModal,
         isModal,
         deleteCart,
+        Total,
       }}
     >
       {children}

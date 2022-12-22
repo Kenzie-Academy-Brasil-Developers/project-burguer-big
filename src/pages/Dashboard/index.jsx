@@ -5,8 +5,10 @@ import { UserContext } from "../../providers/UserContext";
 import { CartContext } from "../../providers/CartContext";
 
 import logo from "../../assets/logo.svg";
-import cart from "../../assets/icon-cart.svg"
-import logout from "../../assets/icon-logout.svg"
+import cart from "../../assets/icon-cart.svg";
+import logout from "../../assets/icon-logout.svg";
+import search from "../../assets/icon-search.svg";
+import { StyledHeader } from "./style";
 
 export const Dashboard = () => {
   const {
@@ -44,10 +46,10 @@ export const Dashboard = () => {
   };
 
   return (
-    <div>
+    <>
       {isModal && <Cart />}
-      <header onSubmit={submit}>
-        <div>
+      <StyledHeader onSubmit={submit}>
+        <section>
           <img src={logo} alt="" />
           <div>
             <form>
@@ -59,7 +61,9 @@ export const Dashboard = () => {
                   setInputValue(event.target.value.toLowerCase())
                 }
               ></input>
-              <button type="submit">Pesquisar</button>
+              <button type="submit">
+                <img src={search} alt="Buscar" />
+              </button>
             </form>
             <button type="button" onClick={() => setIsModal(true)}>
               <img src={cart} alt="Carrinho" />
@@ -68,11 +72,11 @@ export const Dashboard = () => {
               <img src={logout} alt="Sair" />
             </button>
           </div>
-        </div>
-      </header>
+        </section>
+      </StyledHeader>
       <main>
         <ListCards />
       </main>
-    </div>
+    </>
   );
 };

@@ -12,11 +12,16 @@ import { StyledSection } from "../../styles/pageForm";
 import logo from "../../assets/logo.svg";
 
 import { Link } from "react-router-dom";
+import { BigGreenButton, GreyButton } from "../../styles/buttons";
 
 export const LoginPage = () => {
   const { userLogin } = useContext(UserContext);
 
-  const { register, handleSubmit } = useForm<iLoginFormData>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<iLoginFormData>({
     mode: "onBlur",
     resolver: yupResolver(loginSchema),
   });
@@ -45,6 +50,7 @@ export const LoginPage = () => {
             {...register("email")}
           />
         </fieldset>
+           {errors.email?.message && <p>{errors.email.message}</p>}
 
         <fieldset>
           <label>Senha</label>
@@ -54,14 +60,18 @@ export const LoginPage = () => {
             {...register("password")}
           />
         </fieldset>
+        {errors.password?.message && <p>{errors.password.message}</p>}
 
-        <button type="submit">Logar</button>
+        <BigGreenButton type="submit">Logar</BigGreenButton>
 
-        <button>
-          <Link to="/register">
-            Crie sua conta para saborear muitas delícias e matar sua fome!
-          </Link>
-        </button>
+        <span>
+          {" "}
+          Crie sua conta para saborear muitas delícias e matar sua fome!
+        </span>
+
+        <GreyButton>
+          <Link to="/register">Cadastrar</Link>
+        </GreyButton>
       </form>
     </StyledSection>
   );

@@ -9,6 +9,7 @@ export const StyledSection = styled.section`
   align-items: left;
   gap: 20px;
 
+
   form {
     border: 1px groove #ddd ;
     -webkit-box-shadow: 0px 0px 0px 0px #000;
@@ -19,10 +20,16 @@ export const StyledSection = styled.section`
     flex-direction: column;
     align-items: left;
     gap: 20px;
+
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   fieldset {
     padding: 5px;
+    height: 60px;
     margin: 0 0 1.5em 0 ;
     border: 1px groove #ddd ;
     -webkit-box-shadow: 0px 0px 0px 0px #000;
@@ -38,12 +45,11 @@ export const StyledSection = styled.section`
     outline: none;
   }
 
-
-  button {
-    width: 100%;
-    border: 1px solid var(--color-grey-50);
-    border-radius: 4px;
+  span {
+    color: var(--color-grey-50);
+    text-align: center;
   }
+  
   @media (min-width: 700px) {
     max-width: 500px;
   }
