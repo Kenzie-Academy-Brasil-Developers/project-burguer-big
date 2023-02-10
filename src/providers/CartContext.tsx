@@ -12,8 +12,8 @@ export const CartProvider = ({ children }: iChildren) => {
     setCurrentSale([...currentSale, data]);
   };
 
-  const deleteCart = (data: iProduct) => {
-    const newList = currentSale.filter((item) => item.id !== data.id);
+  const deleteCart = (indexKey: number) => {
+    const newList = currentSale.filter((item, index) => index !== indexKey);
     setCurrentSale(newList);
   };
 

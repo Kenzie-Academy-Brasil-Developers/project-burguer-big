@@ -35,16 +35,19 @@ export const StyledDiv = styled.div`
   }
 
   li {
-    min-width: 343px;
+    width: 100%;
     height: 80px;
     border-radius: 4px;
     display: flex;
     justify-content: space-between;
 
     div {
+      width: 100%;
       color: black;
       background-color: var(--color-grey-0);
       display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 20px;
 
       img {
@@ -58,5 +61,33 @@ export const StyledDiv = styled.div`
         object-fit: cover;
       }
     }
+
+    /* div {
+      width: 100%;
+      color: black;
+      background-color: var(--color-grey-0);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      img {
+        width: 75px;
+        height: 75px;
+        border-radius: 4px 4px 0 0;
+        display: flex;
+        align-items: center;
+        background-color: var(--color-grey-10);
+        margin: 0 auto;
+        object-fit: cover;
+      }
+
+      button {
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    } */
   }
 `;

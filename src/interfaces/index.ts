@@ -49,7 +49,7 @@ export interface iCartContext {
   isModal: boolean;
   setCurrentSale(data: iProduct[]): void;
   addCart(data: iProduct): void;
-  deleteCart(data: iProduct): void;
+  deleteCart(index: number): void;
   currentSale: iProduct[];
   Total: number;
 }

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Cart } from "../../components/Cart";
 import { ListCards } from "../../components/ListCards";
 import { UserContext } from "../../providers/UserContext";
@@ -28,29 +28,31 @@ export const Dashboard = () => {
     // eslint-disable-next-line
   }, []);
 
-  const filterCards = (inputValue) => {
-    const includesItem = listProduct.filter(
-      (item) =>
-        item.name.toLowerCase().includes(inputValue) ||
-        item.category.toLowerCase().includes(inputValue)
-    );
-
-    includesItem.length > 0
-      ? setListProduct(includesItem)
-      : getProducts(tokenUser);
-  };
-
-  const submit = (event) => {
+  const handleSubmit = (event: any) => {
     event.preventDefault();
     filterCards(inputValue);
   };
 
+  const filterCards = (searchValue: string) => {
+    const filteredProducts = listProduct.filter(
+      (item) =>
+        item.name.toLowerCase().includes(searchValue) ||
+        item.category.toLowerCase().includes(searchValue)
+    );
+
+    filteredProducts.length > 0
+      ? setListProduct(filteredProducts)
+      : getProducts(tokenUser);
+  };
+
+  
+
   return (
     <>
       {isModal && <Cart />}
-      <StyledHeader onSubmit={submit}>
+      <StyledHeader onSubmit={handleSubmit}>
         <section>
-          <img src={logo} alt="" />
+          <img src={logo} alt="Logo" />
           <div>
             <form>
               <input
