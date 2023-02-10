@@ -4,7 +4,7 @@ import { ListCards } from "../../components/ListCards";
 import { UserContext } from "../../providers/UserContext";
 import { CartContext } from "../../providers/CartContext";
 
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import cart from "../../assets/icon-cart.svg";
 import logout from "../../assets/icon-logout.svg";
 import search from "../../assets/icon-search.svg";

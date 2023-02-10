@@ -29,6 +29,12 @@ export const StyledDiv = styled.div`
     padding: 0 15px;
   }
 
+p {
+  font-size: 30px;
+  text-align: center;
+  margin: 25% auto;
+}
+
   ul {
     width: 100%;
     height: 260px;

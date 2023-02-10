@@ -7,7 +7,7 @@ import { UserContext } from "../../providers/UserContext";
 import { StyledSection } from "../../styles/pageForm";
 import { Link } from "react-router-dom";
 
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import iconLogin from "../../assets/enter.png";
 import { BigGreenButton, GreyButton } from "../../styles/buttons";
 import { StyledLink } from "./style";
