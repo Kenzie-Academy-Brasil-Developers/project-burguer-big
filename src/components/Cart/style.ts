@@ -29,11 +29,11 @@ export const StyledDiv = styled.div`
     padding: 0 15px;
   }
 
-p {
-  font-size: 30px;
-  text-align: center;
-  margin: 25% auto;
-}
+  p {
+    font-size: 30px;
+    text-align: center;
+    margin: 25% auto;
+  }
 
   ul {
     width: 100%;
@@ -68,6 +68,16 @@ p {
         margin: 0 auto;
         object-fit: cover;
       }
+    }
+  }
+
+  span {
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bold;
+
+    @media(min-width: 900px){
+      font-size: 25px;
     }
   }
 `;
