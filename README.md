@@ -37,7 +37,7 @@
 
 <h2 id="Como acessar"> :computer_mouse: Como acessar?</h2>
 
-<a href="https://react-hamburgueria-v2-carolinaolivacruz.vercel.app/">Para conferir e utilizar o projeto clique aqui</a>.
+<a href="https://project-burguer-big.vercel.app">Para conferir e utilizar o projeto clique aqui</a>.
 
 <h2 id="descricao">:pencil2: Descrição</h2>
 Essa aplicação e-commerce de fast food é uma versão simples e básica de uma loja virtual que oferece aos clientes a possibilidade de fazer pedidos de comida rápida. O objetivo principal deste MVP é testar rapidamente a ideia de negócio com o mínimo de recursos possíveis.
@@ -92,7 +92,7 @@ Essa aplicação e-commerce de fast food é uma versão simples e básica de uma
 
 ### Repositório da API
  
->Interagir com o site por meio<a href="https://react-hamburgueria-v2-carolinaolivacruz.vercel.app/"> da Vercel</a>.
+>Interagir com o site por meio<a href="https://project-burguer-big.vercel.app"> da Vercel</a>.
 
 <h2 id="doc">:page_facing_up: URL API </h2>
 <a href="https://hamburgueria-kenzie-v2.herokuapp.com">Clique aqui para acessar a url da API</a>.
