@@ -26,7 +26,7 @@
 <br>
 • <a href="#interacao">Como interagir com o projeto?</a>
 <br>
-• <a href="#doc">Documentação da API</a>
+• <a href="#doc">Url da API</a>
 <br>
 • <a href="#Bibliotecas">Bibliotecas</a>
 <br>
@@ -73,6 +73,7 @@ Essa aplicação e-commerce de fast food é uma versão simples e básica de uma
 - Exibir soma total dos itens adicionados ao carrinho
 
 ### Fucionalidades para adicionar
+<br/>
 - Catálogo de produtos: Apresentar quantos itens tem disponível para a venda
 <br/>
 - Carrinho de compras: Caso adicionado o mesmo item, ter a opção de somar a quantidade e poder remover
