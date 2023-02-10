@@ -9,9 +9,10 @@ export const StyledCart = styled.section`
 
 export const StyledDiv = styled.div`
   width: 90%;
-  padding: 10px;
   max-width: 500px;
+  min-height: 300px;
   max-height: 371px;
+  padding: 10px;
   margin: 50px auto;
   background-color: var(--color-grey-0);
 
@@ -25,10 +26,11 @@ export const StyledDiv = styled.div`
 
   button {
     color: var(--color-grey-0);
+    padding: 0 15px;
   }
 
   ul {
-    width: 90%;
+    width: 100%;
     height: 260px;
     overflow: auto;
     scrollbar-width: initial;
@@ -61,33 +63,5 @@ export const StyledDiv = styled.div`
         object-fit: cover;
       }
     }
-
-    /* div {
-      width: 100%;
-      color: black;
-      background-color: var(--color-grey-0);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-
-      img {
-        width: 75px;
-        height: 75px;
-        border-radius: 4px 4px 0 0;
-        display: flex;
-        align-items: center;
-        background-color: var(--color-grey-10);
-        margin: 0 auto;
-        object-fit: cover;
-      }
-
-      button {
-        img {
-          width: 20px;
-          height: 20px;
-        }
-      }
-    } */
   }
 `;

@@ -8,7 +8,9 @@ import { StyledSection } from "../../styles/pageForm";
 import { Link } from "react-router-dom";
 
 import logo from "../../assets/logo.svg";
-import { GreyButton } from "../../styles/buttons";
+import iconLogin from "../../assets/enter.png";
+import { BigGreenButton, GreyButton } from "../../styles/buttons";
+import { StyledLink } from "./style";
 
 export const RegisterPage = () => {
   const { userRegister } = useContext(UserContext);
@@ -34,13 +36,15 @@ export const RegisterPage = () => {
           ingredientes.
         </span>
       </div>
-      <form onSubmit={handleSubmit(userRegister)} noValidate>
-        <div>
+        
+          <StyledLink>
           <h4>Cadastro</h4>
-          <button>
-            <Link to="/">Retornar para o login</Link>
-          </button>
-        </div>
+            <Link to="/">
+              <img src={iconLogin} alt="" />
+            </Link>
+          </StyledLink>
+       
+      <form onSubmit={handleSubmit(userRegister)} noValidate>
         <fieldset>
           <label>Name</label>
           <input
@@ -79,8 +83,7 @@ export const RegisterPage = () => {
         {errors.passwordConfirmation?.message && (
           <p>{errors.passwordConfirmation.message}</p>
         )}
-
-        <GreyButton type="submit">Cadastrar</GreyButton>
+        <BigGreenButton type="submit">Cadastrar</BigGreenButton>
       </form>
     </StyledSection>
   );

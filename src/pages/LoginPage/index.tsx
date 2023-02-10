@@ -33,7 +33,6 @@ export const LoginPage = () => {
           <img src={logo} alt="Logo" />
         </div>
         <div>
-          <img src="" alt="" />
           <span>
             A vida é como um sanduíche, é preciso recheá-la com os melhores
             ingredientes.
@@ -50,7 +49,7 @@ export const LoginPage = () => {
             {...register("email")}
           />
         </fieldset>
-           {errors.email?.message && <p>{errors.email.message}</p>}
+        {errors.email?.message && <p>{errors.email.message}</p>}
 
         <fieldset>
           <label>Senha</label>
@@ -69,9 +68,7 @@ export const LoginPage = () => {
           Crie sua conta para saborear muitas delícias e matar sua fome!
         </span>
 
-        <GreyButton>
-          <Link to="/register">Cadastrar</Link>
-        </GreyButton>
+        <Link to="/register">Cadastrar</Link>
       </form>
     </StyledSection>
   );

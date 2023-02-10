@@ -10,18 +10,18 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   :root {
-  --color-primary: #27ae60;
-  --color-primary-50: #93d7af;
-  --color-secundary: #eb5757;
+  --color-primary: #db1020;
+  --color-primary-50: #fd727d;
+  --color-secundary: #ffd700;
   --color-grey-100: #333333;
   --color-grey-50: #828282;
   --color-grey-20: #E0E0E0;
-  --color-grey-10: #F5F5F5;
-  --color-grey-0: #ffff;
+  --color-grey-10: #f5f5f5b5;
+  --color-grey-0: #ffffff;
 
-  --color-alert-negative:#E60000;
-  --color-alert-warning:#FFCD07;
-  --color-alert-sucess:#168821;
+  --color-alert-negative:#db1020;
+  --color-alert-warning:#ffd700;
+  --color-alert-sucess:#27742d;
   --color-alert-information:#155BCB;
 }
 

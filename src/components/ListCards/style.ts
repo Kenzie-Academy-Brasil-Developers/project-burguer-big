@@ -40,7 +40,7 @@ export const StyledDivDescription = styled.div`
 
 export const StyledDivImg = styled.div`
   height: 150px;
-  background-color: var(--color-grey-20);
+  background-color: var(--color-grey-10);
   display: flex;
   align-items: center;
 

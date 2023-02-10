@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.header`
   width: 100vw;
-  background-color: var(--color-grey-20);
+  background-color: var(--color-grey-0);
+  box-shadow: 5px 3px 3px var(--color-grey-20);
 
   section {
     width: 90%;
@@ -25,9 +26,10 @@ export const StyledHeader = styled.header`
       display: flex;
       align-items: center;
       gap: 10px;
-      background-color: var(--color-grey-0);
+      background-color: var(--color-grey-10);
 
       input {
+        background-color: var(--color-grey-10);
         border: none;
       }
     }
